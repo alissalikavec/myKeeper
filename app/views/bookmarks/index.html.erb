@@ -6,7 +6,7 @@
 <% end %>
 
 	<h1>Bookmarks</h1>
-<h3>Topic list</h3>
+<h3>Topics:</h3>
 <% Bookmark.tag_counts_on(:tags).each do |tag| %>
 <%= link_to tag.name, tag_path(tag.name) %>
 <% end %>
