@@ -1,0 +1,12 @@
+<h1>All Bookmarks</h1>
+<% @bookmarks.each do |b| %>
+<%= raw b.tag_list.map {|t| link_to t, tag_path(t) }.join(', ') %>
+<%= b.title %>
+<%= b.text %>
+<% end %>
+
+	<h1>Bookmarks</h1>
+<h3>Topic list</h3>
+<% Bookmark.tag_counts_on(:tags).each do |tag| %>
+<%= link_to tag.name, tag_path(tag.name) %>
+<% end %>
