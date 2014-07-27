@@ -1,3 +1,6 @@
+<% if policy(@bookmark).edit? %>
+<%= link_to "Edit", edit_bookmark_path(@bookmark) %>
+<% end %>
 <p>
 <%= @bookmark.tag_list %>
 Source: <%= @bookmark.title %>

@@ -1,12 +1,17 @@
 <h1>All Bookmarks</h1>
+<% if policy(Bookmark.new).create? %>
+<%= link_to "New Bookmark", new_bookmark_path %>
+<% end %>
 <% @bookmarks.each do |b| %>
+<p>
 <%= raw b.tag_list.map {|t| link_to t, tag_path(t) }.join(', ') %>
 <%= b.title %>
 <%= b.text %>
+<em>Created <%= time_ago_in_words(b.created_at) %> ago </em></p>
 <% end %>
-
 	<h1>Bookmarks</h1>
 <h3>Topics:</h3>
+<%= link_to "View All", bookmarks_path %>
 <% Bookmark.tag_counts_on(:tags).each do |tag| %>
 <%= link_to tag.name, tag_path(tag.name) %>
 <% end %>

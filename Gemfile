@@ -51,3 +51,5 @@ gem 'spring',        group: :development
 gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'figaro'
+gem 'faker'
+gem 'pundit'

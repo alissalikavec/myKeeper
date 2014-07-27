@@ -2,13 +2,33 @@ class BookmarksController < ApplicationController
   def index
   	if params[:tag]
   		@bookmarks = Bookmark.tagged_with(params[:tag])
+      authorize @bookmarks
   	else
-  		@bookmarks = Bookmark.all	
+  		@bookmarks = Bookmark.all
+      authorize @bookmarks
   	end
   	
   end
 
   def new
+    @bookmark = Bookmark.new
+    authorize @bookmark
+  end
+
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
+  end
+
+  def update
+    @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
+    if @bookmark.update_attributes(bookmark_params)
+      flash[:notice] = "Bookmark was updated."
+    else
+      flash[:error] = "There was an error saving your bookmark! Please try again."
+      render :edit
+    end
   end
 
   def show
@@ -17,9 +37,16 @@ class BookmarksController < ApplicationController
 
   def create
   	@bookmark = Bookmark.new(bookmark_params)
+    authorize @bookmark
+    @bookmark = current_user.bookmarks.build(bookmark_params)
 
-  	@bookmark.save
-  	redirect_to @bookmark
+  	if @bookmark.save
+      flash[:notice] = "Bookmark saved!"
+  	  redirect_to @bookmark
+    else
+      flash[:error] = "Oops, there was a problem saving your bookmark. Try again!"
+      render :new
+    end
   end
 
   private
