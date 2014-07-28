@@ -1,12 +1,11 @@
+<h1><%= @bookmark.tag_list %></h1>
+<%= @bookmark.title %><br/>
 <% if policy(@bookmark).edit? %>
-<%= link_to "Edit", edit_bookmark_path(@bookmark) %>
+<%= link_to "Edit", edit_bookmark_path(@bookmark), class: 'btn btn-info btn-sm' %>
 <% end %>
 <% if policy(@bookmark).destroy? %>
-<%= link_to "Delete bookmark", @bookmark, method: :delete, data: {confirm: 'Are you sure you want to delete this topic?' } %>
+<%= link_to "Delete", @bookmark, class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure you want to delete this topic?' } %>
 <% end %>
 <p>
 <%= render partial: "favorites/favorite", locals: {bookmark: @bookmark} %>
-<%= @bookmark.tag_list %>
-Source: <%= @bookmark.title %>
-Text: <%= @bookmark.text %>
 </p>
