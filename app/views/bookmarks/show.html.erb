@@ -1,6 +1,9 @@
 <% if policy(@bookmark).edit? %>
 <%= link_to "Edit", edit_bookmark_path(@bookmark) %>
 <% end %>
+<% if policy(@bookmark).destroy? %>
+<%= link_to "Delete bookmark", @bookmark, method: :delete, data: {confirm: 'Are you sure you want to delete this topic?' } %>
+<% end %>
 <p>
 <%= render partial: "favorites/favorite", locals: {bookmark: @bookmark} %>
 <%= @bookmark.tag_list %>

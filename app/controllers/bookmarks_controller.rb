@@ -49,6 +49,18 @@ class BookmarksController < ApplicationController
     end
   end
 
+    def destroy
+      @bookmark = Bookmark.find(params[:id])
+      authorize @bookmark
+      if @bookmark.destroy
+        flash[:notice] = "Bookmark destroyed."
+        redirect_to bookmarks_path
+      else
+        flash[:error] = "Bookmark could not be destroyed. Please try again."
+        render :show
+    end
+  end
+
   private
   def bookmark_params
   	params.require(:bookmark).permit(:title, :text, :tag_list)
