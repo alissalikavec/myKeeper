@@ -2,14 +2,14 @@
 ## A place to keep your bookmarks.
 
 ###Requirements
-- As a user, I want to be able to sign in and out of this application.`
+- As a user, I want to be able to sign in and out of this application.
 - As a user, I want to be able to view an index of all bookmarks submitted by all users, organized by topic.
 - All bookmarks should be ordered by the date they were submitted, in descending order.
 - As a user, I want to be able to click on a hashtag topic and then display a view with the entire collection of only related bookmarks.
 - As a user, I want to be able to delete a bookmark that I submitted from my personal index.
 
 ###Todo
-Mailgun:
+Griddler:
 - As a user, I want to be able to email a URL to Keeper and have it saved in Keeper's database.
 As a user, I want to be able to add a hashtag to an email subject so that my bookmark is categorized.
 

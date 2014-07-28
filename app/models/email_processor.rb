@@ -5,7 +5,7 @@ class EmailProcessor
 	end
 
 	def self.create_bookmark(email)
-		@title = email.body
+		@title = email.subject
 		self.get_user_id(email)
 		Bookmark.create!({ title: @title, tag_list: email.body })
 	end
