@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+<p>My bookmarks and favorites.</p>
+<h3>My Bookmarks</h3>
+<% current_user.bookmarks.each do |t| %>
+<%= link_to bookmark.title, bookmark %>
+<% end %>
+<h3>My Favorites</h3>
+<% current_user.favorited do |b| %>
+	<% link_to bookmark.title, bookmark %>
+	<% end %>

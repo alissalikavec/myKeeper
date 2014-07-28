@@ -1,0 +1,9 @@
+<% if favorite = current_user.favorited(bookmark) %>
+	<%= link_to [bookmark, favorite] method: :delete do %>
+	Unfavorite
+	<% end %>
+<% else %>
+	<%= link_to [bookmark, Favorite.new], method: :post do %>
+	Favorite
+	<% end %> 
+<%end%>

@@ -2,6 +2,7 @@
 <%= link_to "Edit", edit_bookmark_path(@bookmark) %>
 <% end %>
 <p>
+<%= render partial: "favorites/favorite", locals: {bookmark: @bookmark} %>
 <%= @bookmark.tag_list %>
 Source: <%= @bookmark.title %>
 Text: <%= @bookmark.text %>
