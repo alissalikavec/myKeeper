@@ -1,5 +1,44 @@
 @import "bootstrap";
-
+$melon: #80DBA4;
+$lightGreen: #CFFFD2;
 .user-info {
-	margin-top: 10px;
+	margin-top: 20px;
+
+	a {
+		color: white; 
+
+	&:hover {
+		color: $lightGreen;
+		text-decoration: none;
+		}
+	}
+}
+
+.nav-tabs {
+	border-bottom: 0;
+	padding: 0 10px; background: $melon;
+
+	li {
+	margin-bottom: 0px;
+	}
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+	background: $melon;
+	color: $lightGreen;
+	border: 1px solid transparent;
+}
+
+a.keeper-logo {
+	color: white;
+	font-size: 30px;
+}
+
+/* index! */
+.table-bookmarks {
+	width: 90%;
+
+	td {
+	padding: 8px;
+	}
 }
