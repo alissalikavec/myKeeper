@@ -4,14 +4,10 @@ class IncomingController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:create]
 
   def create
-    # Take a look at these in your server logs
-    # to get a sense of what you're dealing with.
-    puts "INCOMING PARAMS HERE: #{stripped-text}, #{subject}"
-
-    # You put the message-splitting and business
-    # magic here. 
-
-    # Assuming all went well. 
+    puts "INCOMING PARAMS HERE: #{params}"
+    Bookmark.create!({title: params[:'stripped-text'], tag_list: params[:subject]})
     head 200
+
+    #TODO: tie user email to user
   end
 end
