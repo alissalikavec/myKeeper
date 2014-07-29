@@ -57,6 +57,8 @@ GEM
     griddler (1.0.0)
       htmlentities
       rails (>= 3.2.0)
+    griddler-sendgrid (0.0.1)
+      griddler
     hike (1.2.3)
     htmlentities (4.3.2)
     i18n (0.6.11)
@@ -151,6 +153,7 @@ DEPENDENCIES
   faker
   figaro
   griddler
+  griddler-sendgrid
   jbuilder (~> 2.0)
   jquery-rails
   pg
