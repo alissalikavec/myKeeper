@@ -1,6 +1,7 @@
 <h1>All Bookmarks</h1>
 <% if policy(Bookmark.new).create? %>
 <%= link_to "New Bookmark", new_bookmark_path, class: 'btn btn-success' %>
+<p>To send a topic via email, send a message to new@app27862609.mailgun.org with your topic in the subject line and link in the email body.</p>
 <% end %>
 <table class="table-bookmarks">
 <% @bookmarks.each do |b| %>
