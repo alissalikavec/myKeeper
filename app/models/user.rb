@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :bookmarks
   has_many :favorites, dependent: :destroy
+  has_many :favorited_bookmarks, through: :favorites, source: :bookmark
 
    def role?(base_role)
    	role == base_role.to_s

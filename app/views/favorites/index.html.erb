@@ -1,0 +1,39 @@
+<h2>Your Submissions</h2>
+<table class="table-bookmarks">
+	<% @mine.each do |b| %>
+		<tr>
+			<td>
+				<%= raw b.tag_list.map {|t| link_to t, tag_path(t) }.join(', ') %>
+			</td>
+			<td>
+				<%= b.title %>
+			</td>
+			<td>
+				<%= link_to "Details", bookmark_path(b) %>
+			</td>
+			<td>
+				<em>Created <%= time_ago_in_words(b.created_at) %> ago </em>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<h2>Your Favorites</h2>
+<table class="table-bookmarks">
+	<% @bookmarks.each do |b| %>
+		<tr>
+			<td>
+				<%= raw b.tag_list.map {|t| link_to t, tag_path(t) }.join(', ') %>
+			</td>
+			<td>
+				<%= b.title %>
+			</td>
+			<td>
+				<%= link_to "Details", bookmark_path(b) %>
+			</td>
+			<td>
+				<em>Created <%= time_ago_in_words(b.created_at) %> ago </em>
+			</td>
+		</tr>
+	<% end %>
+</table>

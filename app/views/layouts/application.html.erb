@@ -9,6 +9,10 @@
 <body>
     <ul class="nav nav-tabs">
       <li><%= link_to "Keeper", bookmarks_path, class: 'keeper-logo' %></li>
+      <% if current_user %>
+      <li><%= link_to "Yours", favorites_path, class: 'secondary-nav' %></li>
+      <li><%= link_to "All", bookmarks_path, class: 'secondary-nav' %> </li>
+      <% end %>
       <div class="pull-right user-info">
         <% if current_user %>
         Hello <%= current_user.email %>! <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

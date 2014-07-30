@@ -3,16 +3,27 @@ $melon: #80DBA4;
 $lightGreen: #CFFFD2;
 .user-info {
 	margin-top: 20px;
-
+	padding: 0 15px !important;
 	a {
-		color: white; 
-
+		color: white;
 	&:hover {
 		color: $lightGreen;
 		text-decoration: none;
 		}
 	}
 }
+
+.secondary-nav {
+	color: white;
+	margin-top: 20px;
+	padding: 0 15px !important;
+
+	&:hover {
+		color: $lightGreen;
+		text-decoration: none;
+		}
+}
+
 
 .nav-tabs {
 	border-bottom: 0;

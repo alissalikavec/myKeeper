@@ -1,4 +1,9 @@
 class FavoritesController < ApplicationController
+  def index
+    @bookmarks = current_user.favorited_bookmarks
+    @mine = current_user.bookmarks
+  end
+
 	def create
      @bookmark = Bookmark.find(params[:bookmark_id])
      favorite = current_user.favorites.build(bookmark: @bookmark)

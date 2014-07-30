@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 20140727234951) do
     t.datetime "updated_at"
   end
 
-  add_index "favorites", ["bookmark_id"], name: "index_favorites_on_bookmark_id"
-
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
