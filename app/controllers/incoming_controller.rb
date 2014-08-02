@@ -5,7 +5,8 @@ class IncomingController < ApplicationController
 
   def create
     puts "INCOMING PARAMS HERE: #{params}"
-    Bookmark.create!({title: params[:'stripped-text'], tag_list: params[:subject], user: User.find_by(email: params[:sender])})
+    Bookmark.create!({title: params[:'stripped-text'], tag_list: params[:subject]})
+    User.find_by(email: params[:sender])
     head 200
 
   end
