@@ -3,10 +3,10 @@ class BookmarkPolicy < ApplicationPolicy
 		true
 	end
 	def create?
-		user.present? && user.role?(:admin)
+		user.present?
 	end
 	def update?
-		create?
+		user.present? && user.role?(:admin)
 	end
 	def show?
 		record.public? || user.present? 
